@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		C943B63321E69AF400D74F2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943B63221E69AF400D74F2A /* AppDelegate.swift */; };
-		C943B63521E69AF400D74F2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943B63421E69AF400D74F2A /* ViewController.swift */; };
 		C943B63821E69AF400D74F2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C943B63621E69AF400D74F2A /* Main.storyboard */; };
-		C943B63A21E69AF600D74F2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C943B63921E69AF600D74F2A /* Assets.xcassets */; };
 		C943B63D21E69AF600D74F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C943B63B21E69AF600D74F2A /* LaunchScreen.storyboard */; };
+		C943B64721E71D8100D74F2A /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943B64621E71D8100D74F2A /* DiaryTableViewController.swift */; };
+		C943B64921E71DA400D74F2A /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943B64821E71DA400D74F2A /* DiaryDetailViewController.swift */; };
+		C943B64B21E71DD600D74F2A /* CreateDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943B64A21E71DD600D74F2A /* CreateDiaryViewController.swift */; };
+		C943B64D21E71E0900D74F2A /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943B64C21E71E0900D74F2A /* PhotosCollectionViewController.swift */; };
+		C943B65321E9C92B00D74F2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C943B65121E9C92B00D74F2A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C943B62F21E69AF400D74F2A /* Diary One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diary One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C943B63221E69AF400D74F2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C943B63421E69AF400D74F2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C943B63721E69AF400D74F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C943B63921E69AF600D74F2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C943B63C21E69AF600D74F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C943B63E21E69AF600D74F2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C943B64621E71D8100D74F2A /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
+		C943B64821E71DA400D74F2A /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
+		C943B64A21E71DD600D74F2A /* CreateDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDiaryViewController.swift; sourceTree = "<group>"; };
+		C943B64C21E71E0900D74F2A /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		C943B65121E9C92B00D74F2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +61,12 @@
 			isa = PBXGroup;
 			children = (
 				C943B63221E69AF400D74F2A /* AppDelegate.swift */,
-				C943B63421E69AF400D74F2A /* ViewController.swift */,
+				C943B64821E71DA400D74F2A /* DiaryDetailViewController.swift */,
+				C943B64A21E71DD600D74F2A /* CreateDiaryViewController.swift */,
+				C943B64C21E71E0900D74F2A /* PhotosCollectionViewController.swift */,
+				C943B64621E71D8100D74F2A /* DiaryTableViewController.swift */,
 				C943B63621E69AF400D74F2A /* Main.storyboard */,
-				C943B63921E69AF600D74F2A /* Assets.xcassets */,
+				C943B65121E9C92B00D74F2A /* Assets.xcassets */,
 				C943B63B21E69AF600D74F2A /* LaunchScreen.storyboard */,
 				C943B63E21E69AF600D74F2A /* Info.plist */,
 			);
@@ -123,7 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C943B63D21E69AF600D74F2A /* LaunchScreen.storyboard in Resources */,
-				C943B63A21E69AF600D74F2A /* Assets.xcassets in Resources */,
+				C943B65321E9C92B00D74F2A /* Assets.xcassets in Resources */,
 				C943B63821E69AF400D74F2A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C943B63521E69AF400D74F2A /* ViewController.swift in Sources */,
 				C943B63321E69AF400D74F2A /* AppDelegate.swift in Sources */,
+				C943B64921E71DA400D74F2A /* DiaryDetailViewController.swift in Sources */,
+				C943B64B21E71DD600D74F2A /* CreateDiaryViewController.swift in Sources */,
+				C943B64D21E71E0900D74F2A /* PhotosCollectionViewController.swift in Sources */,
+				C943B64721E71D8100D74F2A /* DiaryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
