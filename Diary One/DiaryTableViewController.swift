@@ -22,7 +22,7 @@ class DiaryTableViewController: UITableViewController {
 
     
     @IBAction func cameraTapped(_ sender: Any) {
-        performSegue(withIdentifier: "goToNew", sender: "camer")
+        performSegue(withIdentifier: "goToNew", sender: "camera")
     }
 
     @IBAction func plusTapped(_ sender: Any) {
@@ -30,10 +30,17 @@ class DiaryTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "goToNew" {
+            if let text = sender as? String {
+                if text == "camera" {
+                    let createVC = segue.destination as? CreateDiaryViewController
+                    createVC?.startWithCamera = true
+                }
+            }
+        }
     }
     
-    // MARK: - Table view data source
+    // MARK: - Table View Data Source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
