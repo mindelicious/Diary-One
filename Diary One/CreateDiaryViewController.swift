@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CreateDiaryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -37,8 +38,7 @@ class CreateDiaryViewController: UIViewController, UIImagePickerControllerDelega
 
 
     }
-    // MARK: - Update Date
-    
+  
     override func viewWillAppear(_ animated: Bool) {
         updateDate()
     }
@@ -49,6 +49,8 @@ class CreateDiaryViewController: UIViewController, UIImagePickerControllerDelega
             cameraGRTapped("")
         }
     }
+    
+    // MARK: - Update Date
     func updateDate() {
         let dateFormatter = DateFormatter()
         
@@ -67,6 +69,7 @@ class CreateDiaryViewController: UIViewController, UIImagePickerControllerDelega
 
     @objc func keyboardWillHide(notification: NSNotification) {
         changeKeyboardHieght(notification: notification as Notification)
+//        self.bottomConstarints.constant = 65.0
     }
  
     func changeKeyboardHieght(notification:Notification) {
@@ -76,12 +79,32 @@ class CreateDiaryViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
+//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+//        textview.endEditing(true)
+//    }
     
     @IBAction func cancelTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func saveTapped(_ sender: Any) {
+        if let realm = try? Realm() {
+            let entry = Entry()
+            entry.text = textview.text
+            entry.date = datePicker.date
+            for image in images {
+                let picture = Picture(image: image)
+                entry.pictures.append(picture)
+                picture.entry = entry
+            }
+            
+            try? realm.write {
+                realm.add(entry)
+            }
+            dismiss(animated: true, completion: nil)
+        }
     }
+    
     @IBAction func calendarTapped(_ sender: Any) {
         textview.isHidden = true
         datePicker.isHidden = false

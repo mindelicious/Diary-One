@@ -197,6 +197,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yd5-C9-qFh" userLabel="calendar">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="65"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="qG9-7o-nJY"/>
                                                     <constraint firstAttribute="width" constant="60" id="qWs-K2-0g0"/>
                                                 </constraints>
                                                 <state key="normal" image="calendar-gr"/>
@@ -207,6 +208,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t60-BD-xXL" userLabel="camera-gr">
                                                 <rect key="frame" x="65" y="0.0" width="50" height="65"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="MKe-pq-0Q4"/>
                                                     <constraint firstAttribute="width" constant="50" id="PSB-mq-Qwd"/>
                                                 </constraints>
                                                 <state key="normal" image="camera-gr"/>
@@ -233,6 +235,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vds-4T-i9l">
+                                <rect key="frame" x="0.0" y="299" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="568971314.520504">
+                                    <!--2019-01-12 07:35:14 +0000-->
+                                </date>
+                            </datePicker>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFn-vj-xMU">
                                 <rect key="frame" x="157" y="554" width="60" height="30"/>
                                 <constraints>
@@ -243,12 +251,6 @@
                                     <action selector="setDateTapped:" destination="NTv-CS-4wK" eventType="touchUpInside" id="Af6-vq-xWa"/>
                                 </connections>
                             </button>
-                            <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vds-4T-i9l">
-                                <rect key="frame" x="0.0" y="152" width="375" height="363"/>
-                                <date key="date" timeIntervalSinceReferenceDate="568971314.520504">
-                                    <!--2019-01-12 07:35:14 +0000-->
-                                </date>
-                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -257,7 +259,6 @@
                             <constraint firstItem="riT-Qx-F2c" firstAttribute="top" secondItem="Xvq-Ov-G68" secondAttribute="top" id="Man-Nc-AEF"/>
                             <constraint firstItem="Hqv-Lt-cuU" firstAttribute="trailing" secondItem="P2t-m2-xA7" secondAttribute="trailing" id="SmS-oD-2yO"/>
                             <constraint firstItem="riT-Qx-F2c" firstAttribute="trailing" secondItem="Hqv-Lt-cuU" secondAttribute="trailing" id="TE5-wv-dU3"/>
-                            <constraint firstItem="vds-4T-i9l" firstAttribute="centerY" secondItem="Xvq-Ov-G68" secondAttribute="centerY" id="UPg-aY-Gjw"/>
                             <constraint firstItem="qFn-vj-xMU" firstAttribute="leading" secondItem="P2t-m2-xA7" secondAttribute="leading" constant="157" id="Vi6-t0-POv"/>
                             <constraint firstItem="Hqv-Lt-cuU" firstAttribute="leading" secondItem="P2t-m2-xA7" secondAttribute="leading" id="Z8O-IM-q6a"/>
                             <constraint firstItem="xhM-HX-5rL" firstAttribute="top" secondItem="Xea-Dl-ZnP" secondAttribute="bottom" id="bhf-l2-EPq"/>
