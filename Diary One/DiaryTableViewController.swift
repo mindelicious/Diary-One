@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DiaryTableViewController: UITableViewController {
 
     @IBOutlet weak var cameraIcon: UIButton!
     @IBOutlet weak var plusIcon: UIButton!
+    var entries : Results<Entry>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,18 @@ class DiaryTableViewController: UITableViewController {
         cameraIcon.imageView?.contentMode = .scaleAspectFit
         plusIcon.imageView?.contentMode = .scaleAspectFit
     }
-
+    
+    // MARK: - Realm
+    func getEntries() {
+        if let realm = try? Realm() {
+            entries = realm.objects(Entry.self).sorted(byKeyPath: "date", ascending: false)
+            tableView.reloadData()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getEntries()
+    }
     
     @IBAction func cameraTapped(_ sender: Any) {
         performSegue(withIdentifier: "goToNew", sender: "camera")
@@ -42,16 +55,42 @@ class DiaryTableViewController: UITableViewController {
     
     // MARK: - Table View Data Source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let entries = self.entries {
+            return entries.count
+        } else {
         return 0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "diaryCell", for: indexPath) as? DiaryCell {
+            if let entry = entries?[indexPath.row] {
+                if let image = entry.pictures.first?.thumbnail() {
+                    cell.imageViewWidth.constant = 100
+                    cell.previewImageView.image = image
+                } else {
+                    cell.imageViewWidth.constant = 0
+                }
+            }
+            return cell
+        }
+        return UITableViewCell()
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
-   
-    
     
 }
+
+class DiaryCell: UITableViewCell {
+    @IBOutlet weak var previewImageView: UIImageView!
+    @IBOutlet weak var previewTextLabel: UILabel!
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var imageViewWidth: NSLayoutConstraint!
+}
+
