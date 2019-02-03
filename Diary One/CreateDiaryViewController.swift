@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Spring 
 
 class CreateDiaryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -15,6 +16,7 @@ class CreateDiaryViewController: UIViewController, UIImagePickerControllerDelega
     var imagePicker = UIImagePickerController()
     var images : [UIImage] = []
     var startWithCamera = false
+    let entry = Entry()
     
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -52,12 +54,7 @@ class CreateDiaryViewController: UIViewController, UIImagePickerControllerDelega
     
     // MARK: - Update Date
     func updateDate() {
-        let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateFormat = "E, d MMM yyyy"
-        
-        let strDate = dateFormatter.string(from: datePicker.date)
-        navBar.topItem?.title = strDate
+        navBar.topItem?.title = entry.datePrettyString()
     }
     
     
@@ -89,9 +86,7 @@ class CreateDiaryViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func saveTapped(_ sender: Any) {
         if let realm = try? Realm() {
-            let entry = Entry()
             entry.text = textview.text
-            entry.date = datePicker.date
             for image in images {
                 let picture = Picture(image: image)
                 entry.pictures.append(picture)
@@ -109,6 +104,7 @@ class CreateDiaryViewController: UIViewController, UIImagePickerControllerDelega
         textview.isHidden = true
         datePicker.isHidden = false
         setDateButton.isHidden = false
+        datePicker.date = entry.date
        
     }
     
@@ -122,7 +118,7 @@ class CreateDiaryViewController: UIViewController, UIImagePickerControllerDelega
      
         if let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             images.append(chosenImage)
-            let imageView = UIImageView()
+            let imageView = SpringImageView()
             imageView.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
             imageView.widthAnchor.constraint(equalToConstant: 70.0).isActive = true
             imageView.image = chosenImage
@@ -131,6 +127,9 @@ class CreateDiaryViewController: UIViewController, UIImagePickerControllerDelega
             stackView.addArrangedSubview(imageView)
             imagePicker.dismiss(animated: true) {
                 //Animation
+                imageView.animation = "shake"
+                imageView.duration = 1.0
+                imageView.animate()
             }
         }
     }
@@ -139,6 +138,7 @@ class CreateDiaryViewController: UIViewController, UIImagePickerControllerDelega
         textview.isHidden = false
         datePicker.isHidden = true
         setDateButton.isHidden = true
+        entry.date = datePicker.date
         updateDate()
         
     }

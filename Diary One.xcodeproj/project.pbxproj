@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9172D9822078F40009EC08F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9172D9722078F40009EC08F /* Assets.xcassets */; };
+		C9195F702202C9860090B7FB /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9195F6F2202C9860090B7FB /* SplitViewController.swift */; };
 		C943B63321E69AF400D74F2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943B63221E69AF400D74F2A /* AppDelegate.swift */; };
 		C943B63821E69AF400D74F2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C943B63621E69AF400D74F2A /* Main.storyboard */; };
 		C943B63D21E69AF600D74F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C943B63B21E69AF600D74F2A /* LaunchScreen.storyboard */; };
@@ -14,7 +16,6 @@
 		C943B64921E71DA400D74F2A /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943B64821E71DA400D74F2A /* DiaryDetailViewController.swift */; };
 		C943B64B21E71DD600D74F2A /* CreateDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943B64A21E71DD600D74F2A /* CreateDiaryViewController.swift */; };
 		C943B64D21E71E0900D74F2A /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943B64C21E71E0900D74F2A /* PhotosCollectionViewController.swift */; };
-		C943B65321E9C92B00D74F2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C943B65121E9C92B00D74F2A /* Assets.xcassets */; };
 		C943B65521F1B53D00D74F2A /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943B65421F1B53D00D74F2A /* Models.swift */; };
 		E92A1C4E9E79AEF70F7398BA /* Pods_Diary_One.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A96966BDCBD10A121EB8B39 /* Pods_Diary_One.framework */; };
 /* End PBXBuildFile section */
@@ -22,6 +23,8 @@
 /* Begin PBXFileReference section */
 		0A96966BDCBD10A121EB8B39 /* Pods_Diary_One.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diary_One.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9310A2EA8AFC7D2B8C3C7FE5 /* Pods-Diary One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diary One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diary One/Pods-Diary One.debug.xcconfig"; sourceTree = "<group>"; };
+		C9172D9722078F40009EC08F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9195F6F2202C9860090B7FB /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		C943B62F21E69AF400D74F2A /* Diary One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diary One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C943B63221E69AF400D74F2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C943B63721E69AF400D74F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,7 +34,6 @@
 		C943B64821E71DA400D74F2A /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
 		C943B64A21E71DD600D74F2A /* CreateDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDiaryViewController.swift; sourceTree = "<group>"; };
 		C943B64C21E71E0900D74F2A /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
-		C943B65121E9C92B00D74F2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C943B65421F1B53D00D74F2A /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		E47A219BC51DA36C855E4C96 /* Pods-Diary One.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diary One.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diary One/Pods-Diary One.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,11 +93,12 @@
 				C943B64A21E71DD600D74F2A /* CreateDiaryViewController.swift */,
 				C943B64C21E71E0900D74F2A /* PhotosCollectionViewController.swift */,
 				C943B64621E71D8100D74F2A /* DiaryTableViewController.swift */,
+				C9195F6F2202C9860090B7FB /* SplitViewController.swift */,
 				C943B65421F1B53D00D74F2A /* Models.swift */,
 				C943B63621E69AF400D74F2A /* Main.storyboard */,
-				C943B65121E9C92B00D74F2A /* Assets.xcassets */,
 				C943B63B21E69AF600D74F2A /* LaunchScreen.storyboard */,
 				C943B63E21E69AF600D74F2A /* Info.plist */,
+				C9172D9722078F40009EC08F /* Assets.xcassets */,
 			);
 			path = "Diary One";
 			sourceTree = "<group>";
@@ -161,7 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C943B63D21E69AF600D74F2A /* LaunchScreen.storyboard in Resources */,
-				C943B65321E9C92B00D74F2A /* Assets.xcassets in Resources */,
+				C9172D9822078F40009EC08F /* Assets.xcassets in Resources */,
 				C943B63821E69AF400D74F2A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,12 +181,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Diary One/Pods-Diary One-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/Toucan/Toucan.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toucan.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C943B63321E69AF400D74F2A /* AppDelegate.swift in Sources */,
+				C9195F702202C9860090B7FB /* SplitViewController.swift in Sources */,
 				C943B64921E71DA400D74F2A /* DiaryDetailViewController.swift in Sources */,
 				C943B64B21E71DD600D74F2A /* CreateDiaryViewController.swift in Sources */,
 				C943B65521F1B53D00D74F2A /* Models.swift in Sources */,

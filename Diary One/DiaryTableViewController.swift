@@ -20,6 +20,8 @@ class DiaryTableViewController: UITableViewController {
 
         cameraIcon.imageView?.contentMode = .scaleAspectFit
         plusIcon.imageView?.contentMode = .scaleAspectFit
+        
+        
     }
     
     // MARK: - Realm
@@ -32,6 +34,11 @@ class DiaryTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         getEntries()
+        super.viewWillAppear(animated)
+        self.setNeedsStatusBarAppearanceUpdate()
+    }
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
@@ -50,6 +57,12 @@ class DiaryTableViewController: UITableViewController {
                     createVC?.startWithCamera = true
                 }
             }
+        } else if segue.identifier == "tableToDetail" {
+            if let entry = sender as? Entry {
+                if let detailVC = segue.destination as? DiaryDetailViewController {
+                    detailVC.entry = entry
+                }
+            }
         }
     }
     
@@ -63,6 +76,12 @@ class DiaryTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let entry = entries?[indexPath.row] {
+            performSegue(withIdentifier: "tableToDetail", sender: entry)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "diaryCell", for: indexPath) as? DiaryCell {
@@ -73,7 +92,12 @@ class DiaryTableViewController: UITableViewController {
                 } else {
                     cell.imageViewWidth.constant = 0
                 }
+                cell.monthLabel.text = entry.monthString()
+                cell.dayLabel.text = entry.dayString()
+                cell.yearLabel.text = entry.yearString()
             }
+           
+            
             return cell
         }
         return UITableViewCell()
@@ -83,7 +107,10 @@ class DiaryTableViewController: UITableViewController {
         return 100
     }
     
+
+
 }
+
 
 class DiaryCell: UITableViewCell {
     @IBOutlet weak var previewImageView: UIImageView!
